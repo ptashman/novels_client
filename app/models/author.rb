@@ -1,2 +1,0 @@
-class Author < Base
-end
