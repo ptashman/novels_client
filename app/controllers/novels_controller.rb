@@ -16,16 +16,7 @@ class NovelsController < ApplicationController
   # POST /novels.json
   def create
     @novel = Novel.new(novel_params)
-
-    respond_to do |format|
-      if @novel.save
-        format.html { render :index, notice: 'Novel was successfully created.' }
-        format.json { render :show, status: :created, location: @novel }
-      else
-        format.html { render :new }
-        format.json { render json: @novel.errors, status: :unprocessable_entity }
-      end
-    end
+    render :new unless @novel.save rescue redirect_to :back
   end
 
   private
@@ -36,6 +27,6 @@ class NovelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def novel_params
-      params[:novel]
+      params.permit(:title, :description, :author_id)
     end
 end

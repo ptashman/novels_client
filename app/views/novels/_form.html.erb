@@ -1,17 +1,23 @@
-<%= form_for(@novel) do |f| %>
-  <% if @novel.errors.any? %>
+<%= form_tag({controller: "novels", action: "create"}, method: "post") do %>
+  <% if @novel.errors %>
     <div id="error_explanation">
       <h2><%= pluralize(@novel.errors.count, "error") %> prohibited this novel from being saved:</h2>
 
       <ul>
-      <% @novel.errors.full_messages.each do |message| %>
+      <% @novel.errors.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+  <%= label_tag(:title, "Title:") %>
+  <%= text_field_tag(:title) %>
+  <%= label_tag(:description, "Description:") %>
+  <%= text_field_tag(:description) %>
+  <%= label_tag(:author_id, "AuthorID:") %>
+  <%= text_field_tag(:author_id) %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag %>
   </div>
 <% end %>
