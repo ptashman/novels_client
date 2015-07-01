@@ -1,3 +1,12 @@
+GIT
+  remote: git@github.com:ptashman/json_api_client_patched.git
+  revision: a4391c00965d9a6a195a08f882145adfcfb57f61
+  specs:
+    json_api_client (0.9.1)
+      activesupport
+      addressable (~> 2.2)
+      faraday (~> 0.8.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -67,10 +76,6 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
-    json_api_client (0.9.0)
-      activesupport
-      addressable (~> 2.2)
-      faraday (~> 0.8.0)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -154,7 +159,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
-  json_api_client
+  json_api_client!
   rails (= 4.2.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

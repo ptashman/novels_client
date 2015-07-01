@@ -12,9 +12,10 @@
   <tbody>
     <% @ratings.each do |rating| %>
       <tr>
-        <td><%= link_to 'Show', rating %></td>
-        <td><%= link_to 'Edit', edit_rating_path(rating) %></td>
-        <td><%= link_to 'Destroy', rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= rating.id %></td>
+        <td><%= rating.stars %></td>
+        <td><%= rating.novel_id %></td>
+        <td><%= rating.user_id %></td>
       </tr>
     <% end %>
   </tbody>

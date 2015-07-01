@@ -12,9 +12,10 @@
   <tbody>
     <% @novels.each do |novel| %>
       <tr>
-        <td><%= link_to 'Show', novel %></td>
-        <td><%= link_to 'Edit', edit_novel_path(novel) %></td>
-        <td><%= link_to 'Destroy', novel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= novel.id %></td>
+        <td><%= novel.title %></td>
+        <td><%= novel.description %></td>
+        <td><%= novel.author_id %></td>
       </tr>
     <% end %>
   </tbody>
